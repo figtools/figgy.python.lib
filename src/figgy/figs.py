@@ -78,7 +78,7 @@ class Fig(ABC):
         self._value = value
 
     def __str__(self):
-        return self.value if self.value else FIG_MISSING
+        return self.value
 
 
 class AppFig(Fig):
