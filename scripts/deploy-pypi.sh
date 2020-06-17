@@ -2,7 +2,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-cd ../src
+cd "$SCRIPTPATH/../src"
 
 rm dist/* || echo "Dist already gone."
 
