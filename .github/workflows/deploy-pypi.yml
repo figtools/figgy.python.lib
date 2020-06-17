@@ -29,7 +29,6 @@ jobs:
         PYPI_RC: ${{ secrets.PYPI_RC }}
       run: |
         echo "${PYPI_RC}" > ~/.pypirc
-        cd src
         ./scripts/deploy-pypi.sh
 
     - name: Prep Release
