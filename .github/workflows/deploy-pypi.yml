@@ -35,7 +35,6 @@ jobs:
     - name: Prep Release
       id: prep
       run: |
-        cd src
         # Parse version
         VERSION=$(./scripts/get_version.sh)
         echo "Setting release version to $VERSION"
