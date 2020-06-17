@@ -40,7 +40,5 @@ class ConfigWriter:
 
         destination_dir = f'{destination_dir.rstrip("/")}/' if destination_dir else ''
 
-        print(figgy_config)
-
         with open(f"{destination_dir}{file_name}", "w") as file:
             file.write(json.dumps(figgy_config, indent=4))
