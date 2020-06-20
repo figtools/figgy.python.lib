@@ -91,6 +91,9 @@ class Fig(ABC):
 
 
 class AppFig(Fig):
+    """
+    Represents a single configuration that is specific to your application.
+    """
     default: Optional[str] = None
 
     def __init__(self, name: str, default: Optional[str] = None):
@@ -99,6 +102,10 @@ class AppFig(Fig):
 
 
 class ReplicatedFig(Fig):
+    """
+    Defines a parameter that is a global, shared, configuration that you want our application to have
+    access to in its FigStore.
+    """
     source: str
 
     def __init__(self, name: str, source: str):
@@ -107,11 +114,20 @@ class ReplicatedFig(Fig):
 
 
 class SharedFig(Fig):
+    """
+    Defines a parameter owned by an outside party that must be shared with your application for it to run.
+
+    E.G - DB Credentials, API Keys, etc.
+    """
     def __init__(self, name: str):
         super().__init__(name=name)
 
 
 class MergeFig(Fig):
+    """
+    Creates a single parameter by combining a group of parameters into an "uber-parameter". This is ideal for
+    building out DB Connection URLs, etc.
+    """
     pattern: List[Union[str, Fig]]
 
     def __init__(self, name: str, pattern: List[Union[str, Fig]]):

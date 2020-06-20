@@ -10,14 +10,14 @@ Demonstration & Walkthrough of how to use this library: https://github.com/mance
 ## Using figgy.lib
 
 This library greatly simplifies the process of fetching / using configurations from ParameterStore. It is designed
-to be used alongside the larger figgy ecosystem and will help you. For more details on why Figgy offers check out 
+to be used alongside the larger figgy ecosystem and will help you. For more details on what Figgy offers check out 
 the [Figgy Website.](https://www.figgy.dev)
 
 
 To the this lib to import parameters from parameter store:
 
 ### Define your configurations
-
+[What's a Fig?](https://www.figgy.dev/docs/getting-started/concepts.html)
 ```python
 
 # config.py
@@ -75,8 +75,8 @@ print(f"Found Merged SQL Connection String: {FIGS.SQL_CONNECTION_STRING}")
 
 ```
 
-If you run your APP and receive an error indicating a paramter is missing, run `figgy config sync --config figgy.json` where
-the `figgy.json`
+If you run your APP and receive an error indicating a parameter is missing, run `figgy config sync --config figgy.json` where
+the `figgy.json` is the path to the generated `figgy.json` file. 
 
 ### Override with ENV variables
 Any and all configurations can be overridden locally through ENV variables.

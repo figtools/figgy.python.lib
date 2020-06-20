@@ -18,6 +18,13 @@ class ConfigWriter:
 
     @staticmethod
     def write(fig_store: FigStore, file_name: str = "figgy.json", destination_dir=""):
+        """
+        Writes a figgy-compatible declarative configuration file to disk.
+
+        @param: fig_store - A hydrated FigStore object used by your application to fetch configurations
+        @param: file_name - Default: `figgy.json` (recommended). The name of the file that will be written.
+        @param: destination_dir - Default: Current Directory..  The directory to write the `figgy.json` file to.
+        """
         destination_dir = destination_dir.rstrip("/")
 
         figgy_config: OrderedDict = OrderedDict()
