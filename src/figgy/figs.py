@@ -29,15 +29,24 @@ class Fig(ABC):
 
     @property
     def env_name(self):
+        """
+        Return the ENV Variable name that can override any remote configurations.
+        """
         return self.base_name.replace("/", "_").replace("-", "_").upper().rstrip("_").lstrip("_")
 
 
     @property
     def base_name(self):
+        """
+        Return the base/path/to/the/fig without the TWIG
+        """
         return self._name
 
     @property
     def name(self):
+        """
+        Return the /full/path/to/the/fig in ParameterStore
+        """
         if self.twig:
             if not self._name.startswith(self.twig):
                 return f'{self.twig.rstrip("/")}/{self._name.lstrip("/")}'
@@ -64,7 +73,7 @@ class Fig(ABC):
         else:
             if not hasattr(self, '_value') or not self._value:
                 if hasattr(self, '_fig_svc') and self._fig_svc:
-                    print(f"LOOKING UP FIG: {self.name}")
+                    log.info(f"Looking up fig: {self.name}")
                     self._value = self._fig_svc.get_fig(self.name)
 
         # Either we can't find the value, or there is a bug in this software
