@@ -12,7 +12,7 @@ Cloud native config management.
 
 For details on Figgy check out the [Figgy Blog](https://www.figgy.devl) or [Figgy Docs](https:/www.figgy.dev/docs/)
 
-To see a live example of how you can use this library, check the reference github repo: https://github.com/mancej/figgy.python-reference
+To see a live example of how you can use this library, check the reference github repo: https://github.com/figtools/figgy.python-reference
 
 """
 

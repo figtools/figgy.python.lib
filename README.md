@@ -5,7 +5,7 @@ Start using figgy today: https://www.figgy.dev
 
 Check out the detailed docs: https://www.figgy.dev/docs/
 
-Demonstration & Walkthrough of how to use this library: https://github.com/mancej/figgy.python-reference
+Demonstration & Walkthrough of how to use this library: https://github.com/figtools/figgy.python-reference
 
 ## Using figgy.lib
 
