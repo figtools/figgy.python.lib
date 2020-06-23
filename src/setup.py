@@ -2,7 +2,7 @@ import re
 from setuptools import setup, find_packages
 
 FIGGY_WEBSITE = "https://www.figgy.dev"
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 SHORT_DESCRIPTION = "Python library that supports Python development while using the Figgy config management " \
                     f"framework: {FIGGY_WEBSITE}"
 

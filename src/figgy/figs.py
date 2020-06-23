@@ -89,6 +89,8 @@ class Fig(ABC):
     def __str__(self):
         return self.value
 
+    def __eq__(self, o):
+        return self.name == o.name
 
 class AppFig(Fig):
     """
@@ -130,16 +132,21 @@ class MergeFig(Fig):
     """
     pattern: List[Union[str, Fig]]
 
-    def __init__(self, name: str, pattern: List[Union[str, Fig]]):
+    def __init__(self, name: str, pattern: List[Union[str, Fig]], uri_encode: List[Fig] = None):
         super().__init__(name=name)
         self.pattern = pattern
+        self.uri_encode = uri_encode if uri_encode else []
 
     @property
     def pattern(self):
         translated_pattern = []
         for p in self._pattern:
             if hasattr(p, 'name'):
-                translated_pattern.append(f'${{{p.name}}}')
+                suffix = ''
+                if p in self.uri_encode:
+                    suffix = ':uri'
+
+                translated_pattern.append(f'${{{p.name}{suffix}}}')
             else:
                 translated_pattern.append(p)
 
