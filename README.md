@@ -9,15 +9,15 @@ Demonstration & Walkthrough of how to use this library: https://github.com/figto
 
 ## Using figgy.lib
 
-This library greatly simplifies the process of fetching / using configurations from ParameterStore. It is designed
-to be used alongside the larger figgy ecosystem and will help you. For more details on what Figgy offers check out 
+This library greatly simplifies the process of fetching / using configurations from ParameterStore and is designed
+to be used alongside the larger figgy ecosystem and will. For more details on what Figgy offers check out 
 the [Figgy Website.](https://www.figgy.dev)
 
 
 To the this lib to import parameters from parameter store:
 
 ### Define your configurations
-[What's a Fig?](https://www.figgy.dev/docs/getting-started/concepts.html)
+[What's a Fig?](https://www.figgy.dev/docs/getting-started/concepts/)
 ```python
 
 # config.py
@@ -82,9 +82,10 @@ the `figgy.json` is the path to the generated `figgy.json` file.
 Any and all configurations can be overridden locally through ENV variables.
 
 Suppose your:
-TWIG = '/app/foo'
-FIG1 = 'fig1'
-DB_PASS = 'replicated/db/password'
+
+TWIG = `/app/foo`
+FIG1 = `fig1`
+DB_PASS = `replicated/db/password`
 
 To override these values with the follow ENV variables. The `TWIG` (namespace) should be left out of the fig name:
 
